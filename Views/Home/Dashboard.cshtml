@@ -1,0 +1,32 @@
+@model GameModel
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html lang='es-CL'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Index By Cayuyo</title>
+</head>
+
+<body>
+    <div class='wrap'>
+        <h2>Welcome, @Model.Name!</h2>
+        <h3>Current Value: @Model.Value</h3>
+        <form method="post" asp-controller="Game" asp-action="PerformOperation">
+            <button type="submit" name="operation" value="+1">+1</button>
+            <button type="submit" name="operation" value="-1">-1</button>
+            <button type="submit" name="operation" value="x2">x2</button>
+            <button type="submit" name="operation" value="Random">Random</button>
+        </form>
+        <form method="post" asp-action="Logout">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+</body>
+
+</html>
