@@ -17,7 +17,7 @@ public class HomeController : Controller
     {
         HttpContext.Session.SetString("name", user.Name);
         HttpContext.Session.SetInt32("Value", 22);
-        return RedirectToAction("Game");
+        return RedirectToAction("Dashboard");
     }
 
     [HttpPost]
@@ -44,10 +44,10 @@ public class HomeController : Controller
 
         HttpContext.Session.SetInt32("Value", currentValue);
 
-        return RedirectToAction("Game");
+        return RedirectToAction("Dashboard");
     }
 
-    public IActionResult Game()
+    public IActionResult Dashboard()
     {
         string Name = HttpContext.Session.GetString("name");
 
@@ -55,6 +55,6 @@ public class HomeController : Controller
 
         GameModel user = new GameModel { Name = Name, Value = value };
 
-        return View("Game", user);
+        return View("Dashboard", user);
     }
 }

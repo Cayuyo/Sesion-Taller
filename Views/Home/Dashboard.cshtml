@@ -17,7 +17,7 @@
     <div class='wrap'>
         <h2>Welcome, @Model.Name!</h2>
         <h3>Current Value: @Model.Value</h3>
-        <form method="post" asp-controller="Game" asp-action="PerformOperation">
+        <form method="post" asp-controller="Dashboard" asp-action="PerformOperation">
             <button type="submit" name="operation" value="+1">+1</button>
             <button type="submit" name="operation" value="-1">-1</button>
             <button type="submit" name="operation" value="x2">x2</button>
